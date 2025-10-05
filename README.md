@@ -1,9 +1,9 @@
 SUMMARY
 
 Pesky Meteor Apocalypse is a game intended to happen during a time when a meteor is about to hit Earth in a matter of years or less. 
-Your job is to prepare and to decide how you'll defend the planet!! Whether it's changing the meteor's directory or nuking it 
+Your job is to prepare and to decide how you'll defend the planet!! Whether it's changing the meteor's path by using a rocket or nuking it to bring it of course
 as a whole. You choose how and what is going to happen. The asteroid's impact/predicted time to crash is based on the data from 
-NASA's Sentry API, which addresses the challenge's requirements. This is crucial for educating and preparing our population for 
+NASA's Sentry API, as wellas the small body database, which addresses the challenge's requirements. This is crucial for educating and preparing our population for 
 the potential impact of meteors that may crash onto Earth in the future.
 
 PROJECT DETAILS
@@ -11,9 +11,9 @@ PROJECT DETAILS
 This is a draft with some implementation of features. We used a flask back end that will create points for the orbit using real 
 NASA data, and it will get a list of meteors/asteroids that the user may select. Unity will be used to render the orbit. We will 
 also calculate where the asteroid will impact the Earth and the size of its crater. Additionally, it will be calculating overpressure, 
-tsunamis, and earthquakes. This is coded using Python for the backend, unity / c# for the game parts and rendering, spacificly for orbits we planned on using poliastro for creating points and having unity render the path. by uusing poliastro we could also show realistic spacecraft paths if we wanted to, for intersepting the asteroid, and to calculate orbits well even after applying changes from attempted deflection methods.
+tsunamis, and earthquakes. This is coded using Python for the backend, unity / c# for the game parts and rendering, spacificly for orbits we planned on using poliastro for creating points and having unity render the path. by using poliastro we could also show realistic spacecraft paths if we wanted to, for intersepting the asteroid, and to calculate orbits well even after applying changes from attempted deflection methods. To get the asteroids the user used, we used the sentry API, which tracks all asteroids which have a chance of hitting the earth.
 
-It will educate the general public about the effects of asteroids and meteors, and it will show them the ways we can prevent them 
+The simulation will educate the general public about the effects of asteroids and meteors, and it will show them the ways we can prevent them 
 by using our time wisely and efficiently. This would also serve to educate others about how areas around the crater would also be 
 affected by a set of meteors (due to earthquakes and tsunamis).
 

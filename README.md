@@ -1,4 +1,5 @@
-SUMARY
+SUMMARY
+
 Pesky Meteor Apocalypse is a game intended to happen during a time when a meteor is about to hit Earth in a matter of years. 
 Your job is to prepare and to decide how you'll defend the planet!! Whether it's changing the meteor's directory or nuking it 
 as a whole. You choose how and what is going to happen. The asteroid's impact/predicted time to crash is based on the data from 
@@ -6,6 +7,7 @@ NASA's Sentry API, which addresses the challenge's requirements. This is crucial
 the potential impact of meteors that may crash onto Earth in the future.
 
 PROJECT DETAILS
+
 This is a draft with some implementation of features. We used a flask back end that will create points for the orbit using real 
 NASA data, and it will get a list of meteors/asteroids that the user may select. Unity will be used to render the orbit. We will 
 also calculate where the asteroid will impact the Earth and the size of its crater. Additionally, it will be calculating overpressure, 

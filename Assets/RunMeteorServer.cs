@@ -1,6 +1,6 @@
 using UnityEngine;
-using System.Diagnostics; // For Process
-using System;             // For EventHandler
+using System.Diagnostics;
+using System;
 
 public class RunMeteorServer : MonoBehaviour
 {
@@ -15,28 +15,28 @@ public class RunMeteorServer : MonoBehaviour
     {
         try
         {
-            // Setup the process start info
             ProcessStartInfo startInfo = new ProcessStartInfo()
             {
                 FileName = "cmd.exe",
-                Arguments = "/c py -m --app meteor_server run", // '/c' runs the command then exits
+                Arguments = "/c py \"D:\\Unity\\pesky-meteor-apocalypse\\meteor_server.py\"",
                 UseShellExecute = false,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 CreateNoWindow = true
             };
 
-            // Start the process
             meteorProcess = new Process();
             meteorProcess.StartInfo = startInfo;
             meteorProcess.EnableRaisingEvents = true;
 
-            // Optional: capture output for debugging
-            meteorProcess.OutputDataReceived += (sender, e) => {
+            // Optional: log output for debugging
+            meteorProcess.OutputDataReceived += (sender, e) =>
+            {
                 if (!string.IsNullOrEmpty(e.Data))
                     UnityEngine.Debug.Log($"[MeteorServer] {e.Data}");
             };
-            meteorProcess.ErrorDataReceived += (sender, e) => {
+            meteorProcess.ErrorDataReceived += (sender, e) =>
+            {
                 if (!string.IsNullOrEmpty(e.Data))
                     UnityEngine.Debug.LogError($"[MeteorServer ERROR] {e.Data}");
             };
@@ -51,16 +51,6 @@ public class RunMeteorServer : MonoBehaviour
         {
             UnityEngine.Debug.LogError($"Failed to start Meteor server: {ex.Message}");
         }
-    }
-
-    void OnApplicationQuit()
-    {
-        StopMeteorServer();
-    }
-
-    void OnDestroy()
-    {
-        StopMeteorServer();
     }
 
     void StopMeteorServer()
@@ -78,5 +68,15 @@ public class RunMeteorServer : MonoBehaviour
                 UnityEngine.Debug.LogWarning($"Error stopping Meteor server: {ex.Message}");
             }
         }
+    }
+
+    void OnApplicationQuit()
+    {
+        StopMeteorServer();
+    }
+
+    void OnDestroy()
+    {
+        StopMeteorServer();
     }
 }
